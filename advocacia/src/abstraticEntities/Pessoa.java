@@ -1,11 +1,14 @@
+package abstraticEntities;
+
 public abstract class Pessoa {
   private String nome;
   private String CPF;
   private String CNPJ;
   private String email;
   private String documento;
+  private int numeroContato;
 
-  public Pessoa(String nome, String cPF, String cNPJ, String email, String documento, String numeroContato) {
+  public Pessoa(String nome, String cPF, String cNPJ, String email, String documento, int numeroContato) {
     this.nome = nome;
     this.CPF = cPF;
     this.CNPJ = cNPJ;
@@ -14,14 +17,13 @@ public abstract class Pessoa {
     this.documento = documento;
   }
 
-  public Pessoa(String nome, String cPF, String email, String numeroContato) {
+  public Pessoa(String nome, String cPF, String email, int numeroContato) {
     this.nome = nome;
     this.CPF = cPF;
     this.email = email;
     this.numeroContato = numeroContato;
   }
 
-  private String numeroContato;
 
   public String getNome() {
     return nome;
@@ -63,11 +65,11 @@ public abstract class Pessoa {
     this.documento = documento;
   }
 
-  public String getNumeroContato() {
+  public int getNumeroContato() {
     return numeroContato;
   }
 
-  public void setNumeroContato(String numeroContato) {
+  public void setNumeroContato(int numeroContato) {
     this.numeroContato = numeroContato;
   }
 

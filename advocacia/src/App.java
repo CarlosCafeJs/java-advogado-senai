@@ -1,7 +1,10 @@
 import java.util.*;
 
+import entities.*;;
+
 public class App {
     public static void main(String[] args) throws Exception {
+
         Scanner sc = new Scanner(System.in);
 
         List<Advogados> advogados = new ArrayList<Advogados>();
@@ -16,10 +19,10 @@ public class App {
             }
 
             System.out.println("Deseja cadastrar cliente ou advogado?");
-            int escolhaClAd = sc.nextInt();
+            String escolhaClAd = sc.nextLine();
 
-            if (escolhaClAd == 1) {
-                sc.nextLine();
+            if (escolhaClAd.equals("1")) {
+             
                 System.out.println("Digite o NOME do advogado : ");
                 String nome = sc.nextLine();
                 System.out.println("Digite CPF do advogado : ");
@@ -28,11 +31,10 @@ public class App {
                 String email = sc.nextLine();
                 System.out.println("Digite o registro OAB do advogado : ");
                 Integer oabRegistro = sc.nextInt();
-                sc.nextInt();
                 System.out.println("Digite o registro o NUMERO para contato do advogado : ");
                 String numeroContato = sc.nextLine();
 
-            } else if (escolhaClAd == 2) {
+            } else if (escolhaClAd.equals("2")) {
                 System.out.println("Tudo certo por aqui");
                 continue;
                 // sc.nextLine();

@@ -1,6 +1,6 @@
-package entidades;
+package entities;
+import abstraticEntities.Pessoa;
 
-import classesAbstratas.Pessoa;
 
 public class Advogados extends Pessoa {
   private Integer oabRegistro;
