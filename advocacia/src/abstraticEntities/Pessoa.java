@@ -1,26 +1,33 @@
 package abstraticEntities;
 
+import validations.EmailValidation;
+
 public abstract class Pessoa {
   private String nome;
-  private String CPF;
-  private String CNPJ;
+  private String cpf;
+  private String cnpj;
   private String email;
   private String documento;
-  private int numeroContato;
+  private String numeroContato;
 
-  public Pessoa(String nome, String cPF, String cNPJ, String email, String documento, int numeroContato) {
+  public Pessoa(String nome, String cnpj, String email, String documento, String numeroContato) {
+   
     this.nome = nome;
-    this.CPF = cPF;
-    this.CNPJ = cNPJ;
+    this.cnpj = cnpj;
     this.email = email;
     this.numeroContato = numeroContato;
     this.documento = documento;
   }
 
-  public Pessoa(String nome, String cPF, String email, int numeroContato) {
+  public Pessoa(String nome, String cpf, String email, String numeroContato) {
     this.nome = nome;
-    this.CPF = cPF;
-    this.email = email;
+    this.cpf = cpf;
+    if(EmailValidation.validar(email)){
+
+      this.email = email;
+    }else{
+      System.out.println("Email não é valido! \nPor favor digite um E-mail valido!");
+    }
     this.numeroContato = numeroContato;
   }
 
@@ -33,20 +40,20 @@ public abstract class Pessoa {
     this.nome = nome;
   }
 
-  public String getCPF() {
-    return CPF;
+  public String getCpf() {
+    return cpf;
   }
 
-  public void setCPF(String cPF) {
-    CPF = cPF;
+  public void setCpf(String cpf) {
+    this.cpf = cpf;
   }
 
-  public String getCNPJ() {
-    return CNPJ;
+  public String getCnpj() {
+    return cnpj;
   }
 
-  public void setCNPJ(String cNPJ) {
-    CNPJ = cNPJ;
+  public void setCnpj(String cnpj) {
+    this.cnpj = cnpj;
   }
 
   public String getEmail() {
@@ -65,11 +72,11 @@ public abstract class Pessoa {
     this.documento = documento;
   }
 
-  public int getNumeroContato() {
+  public String getNumeroContato() {
     return numeroContato;
   }
 
-  public void setNumeroContato(int numeroContato) {
+  public void setNumeroContato(String numeroContato) {
     this.numeroContato = numeroContato;
   }
 
